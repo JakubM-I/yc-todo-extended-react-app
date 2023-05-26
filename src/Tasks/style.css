@@ -1,0 +1,119 @@
+.tasks__list{
+    border-top: 1px solid rgb(180, 178, 178);
+    padding: 20px 15px 0px;
+    margin-top: 0;
+}
+
+@media screen and (max-width: 499px){
+    .tasks__list{
+        padding: 20px 5px 0px;
+    }
+}
+
+.tasks__listItem{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 5px;
+    border-bottom: 1px solid rgb(146, 142, 142);
+}
+
+.tasks__listItem--done{
+    text-decoration: line-through;
+    color: lightgray;
+}
+
+.tasks__listItem---hide{
+    display: none;
+}
+
+.tasks__doneButton{
+    background: rgb(39, 245, 7);
+    width: var(--icon-width);
+    height: var(--icon-height);
+    margin-right: 10px;
+    flex-shrink: 0;
+    border: 1px rgb(229, 226, 226);
+    cursor: pointer;
+    transition: opacity 0.3s ease-in;
+}
+
+.tasks__doneButton:hover{
+    opacity: 0.7;
+}
+
+.tasks__doneButton--done{
+    background: rgb(223, 250, 216);
+    background-image: url(./done-icon.png);
+    background-position: center;
+    background-size: initial;
+    background-repeat: no-repeat;
+    border: none;
+}
+
+.tasks__taskContent{
+    display: block;
+    flex-grow: 1;
+    font-size: min(max(3.3vw, 14px), 16px);
+    word-break: break-word;
+}
+.tasks__itemButtons{
+    display: flex;
+}
+
+.tasks__taskPriority{
+    margin-right: 5px;
+
+}
+.tasks__taskPriority--important{
+    display: block;
+    height: var(--icon-width);
+    width: var(--icon-height);
+    background-image: url(./priority-1-icon.png);
+    background-position: center;
+    background-size: initial;
+    background-repeat: no-repeat;
+}
+
+.tasks__taskPriority--averange{
+    display: block;
+    height: var(--icon-width);
+    width: var(--icon-height);
+    background-image: url(./priority-2-icon.png);
+    background-position: center;
+    background-size: initial;
+    background-repeat: no-repeat;
+}
+
+.tasks__taskPriority--nopriority{
+    display: block;
+    height: var(--icon-width);
+    width: var(--icon-height);
+    background: #fff;
+    background-position: center;
+    background-size: initial;
+    background-repeat: no-repeat;
+}
+
+.tasks__removeButton{
+    width: var(--icon-width);
+    height: var(--icon-height);
+    border: 1px rgb(229, 226, 226);
+    background: rgba(247, 77, 29, 0.918);
+    background-image: url(./trash-icon.png);
+    background-position: center;
+    background-size: initial;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: opacity 0.3s ease-in;
+}
+
+.tasks__removeButton:hover{
+    opacity: 0.7;
+}
+
+.tasks__taskDivider{
+    border-top: 1px solid rgb(180, 178, 178);;
+}

@@ -1,24 +1,32 @@
-import logo from './logo.svg';
+
 import './App.css';
+import TaskList from './TaskList';
+import Header from './Header';
+import Form from './Form';
+import Tasks from './Tasks';
+import TaskMenu from './TasksMenu';
+import Section from './Section';
+
+let tasksList = [
+  {id: 1, taskName: "Zadanie 1", taskPriority: 1, taskDone: false, taskVisibility: true,},
+  {id: 2, taskName: "Zadanie 2", taskPriority: 2, taskDone: true, taskVisibility: true,},
+  {id: 3, taskName: "Zadanie 3", taskPriority: 0, taskDone: false, taskVisibility: true,},
+];
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <TaskList>
+      <Header title="Lista zadań" />
+      <Section 
+        title="Dodaj nowe zadanie" 
+        body={<Form />} 
+      />
+      <Section 
+        title="Lista zadań" 
+        menu={<TaskMenu tasks={tasksList} />} 
+        body={<Tasks tasks={tasksList} />} 
+      />
+    </TaskList>
   );
 }
 
