@@ -1,6 +1,6 @@
 import "./style.css";
 
-const Tasks = ({tasks}) => {
+const Tasks = ({tasks, toggleTaskDone}) => {
     const toggleTaskPriority = (taskPriority) => {
         if (taskPriority === 0 || taskPriority === 1) {
             return "tasks__taskPriority--nopriority";
@@ -20,8 +20,10 @@ const Tasks = ({tasks}) => {
                 ${task.taskDone ? "tasks__listItem--done" : ""} 
                 ${task.taskVisibility ? "" : "tasks__listItem---hide"}`}
                 >
-                    <button className={`tasks__doneButton 
-                    ${task.taskDone ? "tasks__doneButton--done" : ""}`}
+                    <button 
+                        onClick={() => toggleTaskDone(task.id)}
+                        className={`tasks__doneButton
+                        ${task.taskDone ? "tasks__doneButton--done" : ""}`}
                     />
                     <span className="tasks__taskContent">{task.taskName}</span>
                     <div className="tasks__itemButtons">

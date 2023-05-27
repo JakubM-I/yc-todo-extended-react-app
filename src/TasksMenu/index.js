@@ -1,6 +1,6 @@
 import "./style.css";
 
-const TaskMenu = ({ tasks }) => (
+const TaskMenu = ({ tasks, toggleAllTaskDone }) => (
     tasks.length > 0 && (
     <span className="tasksMenu">
         <div className="tasks__menu">
@@ -23,7 +23,9 @@ const TaskMenu = ({ tasks }) => (
                     : "Ukryj "}
                     zakończone
                 </button>
-                <button className="tasks__buttonItem"
+                <button 
+                    className="tasks__buttonItem"
+                    onClick={toggleAllTaskDone}
                     disabled={tasks.every(({ taskDone }) => taskDone)}
                 >
                     Zakończ wszystkie

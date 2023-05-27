@@ -28,6 +28,16 @@ function App() {
     ]);
   };
 
+  const toggleTaskDone = (id) => {
+    setTasksList(tasksList => tasksList.map(task => {
+      return (task.id === id ? {...task, taskDone: !task.taskDone} : task)
+    }))
+  };
+
+  const toggleAllTaskDone = () => {
+    setTasksList(tasksList => tasksList.map(task => ({...task, taskDone: true})))
+  };
+
   return (
     <TaskList>
       <Header title="Lista zadań" />
@@ -40,8 +50,16 @@ function App() {
       />
       <Section 
         title="Lista zadań" 
-        menu={<TaskMenu tasks={tasksList} />} 
-        body={<Tasks tasks={tasksList} />} 
+        menu={
+          <TaskMenu 
+            tasks={tasksList} 
+            toggleAllTaskDone={toggleAllTaskDone}
+          />} 
+        body={
+          <Tasks 
+            tasks={tasksList} 
+            toggleTaskDone={toggleTaskDone}
+          />} 
       />
     </TaskList>
   )
