@@ -1,6 +1,6 @@
 import "./style.css";
 
-const Tasks = ({tasks, toggleTaskDone}) => {
+const Tasks = ({tasks, toggleTaskDone, deleteTask}) => {
     const toggleTaskPriority = (taskPriority) => {
         if (taskPriority === 0 || taskPriority === 1) {
             return "tasks__taskPriority--nopriority";
@@ -31,7 +31,10 @@ const Tasks = ({tasks, toggleTaskDone}) => {
                         ${toggleTaskPriority(task.taskPriority)}
                         `}
                         />
-                        <button className="tasks__removeButton" />
+                        <button 
+                        onClick={() => deleteTask(task.id)}
+                            className="tasks__removeButton" 
+                        />
                     </div>
                 </li>
             ))}

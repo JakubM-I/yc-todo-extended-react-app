@@ -42,7 +42,11 @@ function App() {
     setTasksList(tasksList => tasksList.map(task => {
       return (task.taskDone ? {...task, taskVisibility: !task.taskVisibility} : task)
     }))
-  }
+  };
+
+  const deleteTask = (id) => {
+    setTasksList(tasksList => tasksList.filter(task => task.id !== id))
+  };
 
   return (
     <TaskList>
@@ -66,6 +70,7 @@ function App() {
           <Tasks 
             tasks={tasksList} 
             toggleTaskDone={toggleTaskDone}
+            deleteTask={deleteTask}
           />} 
       />
     </TaskList>
