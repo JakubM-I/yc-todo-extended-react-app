@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/yc-todo-extended-react-app/static/css/main.aa785d53.css",
-    "main.js": "/yc-todo-extended-react-app/static/js/main.c0be75aa.js",
+    "main.js": "/yc-todo-extended-react-app/static/js/main.29a530fc.js",
     "static/js/787.f2ed70e8.chunk.js": "/yc-todo-extended-react-app/static/js/787.f2ed70e8.chunk.js",
     "index.html": "/yc-todo-extended-react-app/index.html",
     "main.aa785d53.css.map": "/yc-todo-extended-react-app/static/css/main.aa785d53.css.map",
-    "main.c0be75aa.js.map": "/yc-todo-extended-react-app/static/js/main.c0be75aa.js.map",
+    "main.29a530fc.js.map": "/yc-todo-extended-react-app/static/js/main.29a530fc.js.map",
     "787.f2ed70e8.chunk.js.map": "/yc-todo-extended-react-app/static/js/787.f2ed70e8.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.aa785d53.css",
-    "static/js/main.c0be75aa.js"
+    "static/js/main.29a530fc.js"
   ]
 }
