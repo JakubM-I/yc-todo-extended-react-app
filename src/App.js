@@ -29,19 +29,20 @@ function App() {
   };
 
   const toggleTaskDone = (id) => {
-    setTasksList(tasksList => tasksList.map(task => {
-      return (task.id === id ? {...task, taskDone: !task.taskDone} : task)
-    }))
+    setTasksList(tasksList => tasksList.map(task => 
+      (task.id === id ? {...task, taskDone: !task.taskDone} : task)
+    ))
   };
 
   const toggleAllTaskDone = () => {
-    setTasksList(tasksList => tasksList.map(task => ({...task, taskDone: true})))
+    setTasksList(tasksList => tasksList.map(task => ({...task, taskDone: true})
+    ))
   };
 
   const hideDoneTasks = () => {
-    setTasksList(tasksList => tasksList.map(task => {
-      return (task.taskDone ? {...task, taskVisibility: !task.taskVisibility} : task)
-    }))
+    setTasksList(tasksList => tasksList.map(task => 
+     (task.taskDone ? {...task, taskVisibility: !task.taskVisibility} : task)
+    ))
   };
 
   const deleteTask = (id) => {

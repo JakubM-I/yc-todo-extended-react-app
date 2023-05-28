@@ -11,7 +11,6 @@ const Form = ({addNewTask}) => {
             return;
         };
         
-        console.log(`Zadanie: ${taskName}, priorytet: ${taskPriority}`)
         addNewTask(taskName, taskPriority);
         setTaskName("")
         setTaskPriority(0)
