@@ -15,7 +15,9 @@ const Tasks = ({tasks, toggleTaskDone, deleteTask}) => {
 
     return (
         <ul className="tasks__list">
-            {tasks.map(task => (
+            {[...tasks]
+            .sort((a, b) => a.taskDone - b.taskDone || b.taskPriority - a.taskPriority)
+            .map(task => (
                 <li key={task.id} className={`tasks__listItem 
                 ${task.taskDone ? "tasks__listItem--done" : ""} 
                 ${task.taskVisibility ? "" : "tasks__listItem---hide"}`}
