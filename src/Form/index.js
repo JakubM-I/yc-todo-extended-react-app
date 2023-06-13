@@ -11,7 +11,7 @@ const Form = ({addNewTask}) => {
             return;
         };
         
-        addNewTask(taskName, taskPriority);
+        addNewTask(taskName.trim(), taskPriority);
         setTaskName("")
         setTaskPriority(0)
     }
