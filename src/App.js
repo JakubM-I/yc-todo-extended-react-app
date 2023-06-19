@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import './App.css';
 import TaskList from './TaskList';
 import Header from './Header';
@@ -7,13 +7,16 @@ import Tasks from './Tasks';
 import TaskMenu from './TasksMenu';
 import Section from './Section';
 
+const localSavedTasks = JSON.parse(localStorage.getItem("tasks")) 
+  ? JSON.parse(localStorage.getItem("tasks")) 
+  : [];
 
 function App() {
-  const [tasksList, setTasksList] = useState([
-    {id: 1, taskName: "Zadanie 1", taskPriority: 2, taskDone: false, taskVisibility: true,},
-    {id: 2, taskName: "Zadanie 2", taskPriority: 3, taskDone: true, taskVisibility: true,},
-    {id: 3, taskName: "Zadanie 3", taskPriority: 0, taskDone: false, taskVisibility: true,},
-  ]);
+  const [tasksList, setTasksList] = useState(localSavedTasks);
+
+  useEffect(() =>{
+    localStorage.setItem("tasks", JSON.stringify(tasksList));
+  }, [tasksList])
 
   const addNewTask = (taskName, taskPriority) => {
     setTasksList(tasksList => [
